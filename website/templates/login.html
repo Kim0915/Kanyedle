@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{%block title%}Login{%endblock%}
+{%block content%}
+
+<form method = "POST">
+    <h3 align = "center">Login</h3>
+    <div class = "form-group">
+        <label for = "username"> Name </label>
+        <input
+        type = "username"
+        class = "form-control"
+        id = "username"
+        name = "username"
+        placeholder = "Enter Name Here"
+        />
+    </div>
+    <br />
+    <button type = "submit" class = "btn btn-primary">Login</button>
+</form>
+{%endblock%}

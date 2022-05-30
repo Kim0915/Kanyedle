@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %} KANYEDLE {% endblock %}
+{%block content%}
+{% if user.attempts_taken == 0 %}
+You Guessed Correctly! It took you {{user.attempts_taken+1}} guess
+{% else %} 
+You Guessed Correctly! It took you {{user.attempts_taken+1}} guesses
+{% endif %}
+
+ 
+<br>
+You Currently have {{user.correct_guesses}} correct guesses
+<br>
+
+
+<a class="btn" href="/">Go Back</a>
+{% endblock %}

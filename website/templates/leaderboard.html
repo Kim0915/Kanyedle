@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %} KANYEDLE {% endblock %}
+{%block content%}
+
+<h1>LEADERBOARDS</h1>
+{% for user in all_users%}
+{{user.username}} : {{user.correct_guesses}}
+<br>
+{% endfor %}
+
+{% endblock %}

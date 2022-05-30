@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %} KANYEDLE {% endblock %}
+
+{%block content%}
+
+<br>
+WELCOME TO KANYEDLE {{user.username}}
+
+<br>
+<audio id="songAudio">
+    <source src="{{ url_for('static', filename='Runaway.mp3') }}" type="audio/mpeg">
+    <p>Your browser does not support audio</p>
+</audio>
+{% with song_length = (user.attempts_taken**2)*2000 + 1000 %}
+<button onClick = "play_song({{song_length}})">Play Song For {{song_length/1000}} seconds</button>
+<br>
+{% endwith %}
+
+<form method = "POST">
+    <h3 >Guess the Song by Kanye West</h3>
+    <div class = "form-group">
+        <label for = "songTitle"> Name the Song: </label>
+        <input
+        type = "songTitle"
+        class = "form-control"
+        id = "songTitle"
+        name = "songTitle"
+        placeholder = "Song Title Here"
+        />
+    </div> 
+    <br />
+    <button type="submit" class="btn btn-primary">Take a Guess</button>
+    </form>
+{%endblock%}
