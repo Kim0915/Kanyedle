@@ -48,7 +48,7 @@ def correctGuess():
 @views.route('/loseScreen')
 @login_required
 def loseScreen():
-    return render_template('loseScreen.html')
+    return render_template('loseScreen.html', user = current_user)
 
 @views.route('/leaderboard')
 def leaderboard():
